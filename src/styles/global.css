@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-wood-dark: #2c1810;
+  --color-wood-medium: #8b5e3c;
+  --color-wood-light: #d4a574;
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #e8ddd0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
+  font-family: 'Heebo', sans-serif;
+}

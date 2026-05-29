@@ -1,0 +1,70 @@
+---
+const projects = [
+  {
+    src: 'https://images.unsplash.com/photo-1571171754880-4c80aa8c5ceb?w=800&q=80',
+    caption: 'שולחן אוכל פנורמי מעץ אלון | 2024',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80',
+    caption: 'מדף קיר מעץ זית | 2023',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1545259011-eda0e5c2d9af?w=800&q=80',
+    caption: 'ארון בגדים מעץ אגוז | 2024',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1503376931703-b9c47706f64a?w=800&q=80',
+    caption: 'ספסל כניסה בהתאמה אישית | 2023',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=800&q=80',
+    caption: 'מיטה זוגית מעץ מייפל | 2024',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1416879761565-9eb54345e6ca?w=800&q=80',
+    caption: 'שולחן קפה מעץ גלם | 2023',
+  },
+];
+---
+
+<section id="gallery" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-14 max-w-2xl text-center">
+      <h2 class="mb-4 text-3xl font-extrabold text-wood-dark sm:text-4xl">
+        עבודות נבחרות
+      </h2>
+      <p class="text-base text-wood-dark/70 sm:text-lg">
+        כל פיסה היא סיפור ייחודי
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <figure class="group relative overflow-hidden rounded-lg shadow-sm">
+            <img
+              src={project.src}
+              alt={project.caption}
+              loading="lazy"
+              class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-wood-dark/90 via-wood-dark/20 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span class="text-sm font-semibold text-cream sm:text-base">
+                {project.caption}
+              </span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 text-center">
+      <a
+        href="#contact"
+        class="inline-block rounded-lg bg-wood-medium px-8 py-3 text-base font-bold text-cream transition-colors hover:bg-wood-dark"
+      >
+        לכל הפרויקטים - צור קשר
+      </a>
+    </div>
+  </div>
+</section>

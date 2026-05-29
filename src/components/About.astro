@@ -1,0 +1,64 @@
+---
+const aboutImage =
+  'https://images.unsplash.com/photo-1416879851583-f92b9e54b7c6?w=800&q=80';
+
+const stats = [
+  { value: '15+', label: 'שנות ניסיון' },
+  { value: '200+', label: 'פרויקטים הושלמו' },
+  { value: '98%', label: 'לקוחות מרוצים' },
+];
+---
+
+<section id="about" class="py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <!-- Image -->
+      <div class="order-1 lg:order-none">
+        <img
+          src={aboutImage}
+          alt="מעצב עץ בעבודה"
+          loading="lazy"
+          class="aspect-[4/5] w-full rounded-2xl object-cover shadow-xl"
+        />
+      </div>
+
+      <!-- Text -->
+      <div>
+        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-wood-light">
+          אודותי
+        </p>
+        <h2 class="mb-6 text-3xl font-extrabold text-wood-dark sm:text-4xl">
+          נגר ומעצב עץ עם תשוקה לפרטים
+        </h2>
+        <div class="space-y-4 text-base leading-relaxed text-wood-dark/80 sm:text-lg">
+          <p>
+            שמי [שם המעצב], ועיצוב רהיטי עץ הוא לא רק מקצוע עבורי - זה אורח חיים.
+            עם למעלה מ-15 שנות ניסיון בעבודה עם עץ, אני מתמחה ביצירת פיסות ייחודיות
+            המשלבות אסתטיקה מודרנית עם מלאכת יד מסורתית.
+          </p>
+          <p>
+            כל פרויקט מתחיל בשיחה - אני רוצה להבין את הצרכים שלך, את סגנון הבית שלך,
+            ואת הסיפור שאתה רוצה לספר דרך הרהיט. עץ הוא חומר חי עם אופי משלו,
+            ואני כאן כדי לעזור לו להגיע לביטוי המושלם בביתך.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="mt-10 grid grid-cols-3 gap-4 border-t border-cream-dark pt-8">
+          {
+            stats.map((stat) => (
+              <div class="text-center">
+                <div class="text-3xl font-extrabold text-wood-medium sm:text-4xl">
+                  {stat.value}
+                </div>
+                <div class="mt-1 text-sm text-wood-dark/70 sm:text-base">
+                  {stat.label}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

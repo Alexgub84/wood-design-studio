@@ -1,0 +1,53 @@
+---
+const services = [
+  {
+    icon: '🪑',
+    title: 'ריהוט לסלון',
+    description: 'ספות, שולחנות, מדפים וארונות המותאמים בדיוק למרחב שלך',
+  },
+  {
+    icon: '🛏️',
+    title: 'חדרי שינה',
+    description: 'מיטות, ארונות בגדים ושידות לילה מעץ מלא באיכות פרימיום',
+  },
+  {
+    icon: '🍽️',
+    title: 'פינות אוכל',
+    description: 'שולחנות אוכל וכיסאות מעץ מלא - הלב של כל בית',
+  },
+  {
+    icon: '✏️',
+    title: 'עיצוב בהתאמה',
+    description: 'יש לך רעיון? בוא נהפוך אותו למציאות - כל גודל, כל עיצוב',
+  },
+];
+---
+
+<section id="services" class="bg-cream-dark py-20 sm:py-28">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto mb-14 max-w-2xl text-center">
+      <h2 class="mb-4 text-3xl font-extrabold text-wood-dark sm:text-4xl">
+        מה אני מציע
+      </h2>
+      <p class="text-base text-wood-dark/70 sm:text-lg">
+        כל עבודה מבוצעת בסדנה שלי בצפון תל אביב, עם תשומת לב מלאה לכל פרט
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 lg:grid-cols-4">
+      {
+        services.map((service) => (
+          <div class="rounded-xl border-t-4 border-wood-light bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div class="mb-4 text-4xl">{service.icon}</div>
+            <h3 class="mb-2 text-lg font-bold text-wood-dark sm:text-xl">
+              {service.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-wood-dark/70 sm:text-base">
+              {service.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

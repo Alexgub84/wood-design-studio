@@ -1,0 +1,125 @@
+---
+const links = [
+  { href: '#about', label: 'אודות' },
+  { href: '#gallery', label: 'עבודות' },
+  { href: '#process', label: 'תהליך' },
+  { href: '#testimonials', label: 'המלצות' },
+  { href: '#contact', label: 'צור קשר' },
+];
+---
+
+<nav class="sticky top-0 z-50 bg-wood-dark/95 backdrop-blur-md shadow-lg">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 text-cream">
+        <svg
+          class="h-7 w-7 text-wood-light"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 22v-7" />
+          <path d="M12 15c-3 0-5-2-5-5a5 5 0 0 1 10 0c0 3-2 5-5 5Z" />
+          <path d="M12 9 9 6m3 3 3-3" />
+        </svg>
+        <span class="text-xl font-extrabold">אומן העץ</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex md:items-center md:gap-8">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="text-sm font-medium text-cream/90 transition-colors hover:text-wood-light"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Hamburger -->
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-label="תפריט"
+        aria-expanded="false"
+        class="text-cream md:hidden"
+      >
+        <svg
+          id="nav-icon-open"
+          class="h-7 w-7"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+        <svg
+          id="nav-icon-close"
+          class="hidden h-7 w-7"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="nav-menu" class="hidden border-t border-cream/10 md:hidden">
+    <div class="space-y-1 px-4 pb-4 pt-2">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="nav-mobile-link block rounded-lg px-3 py-2 text-base font-medium text-cream/90 transition-colors hover:bg-wood-medium hover:text-cream"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  const iconOpen = document.getElementById('nav-icon-open');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  function closeMenu() {
+    menu.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', () => {
+    const isHidden = menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden', !isHidden);
+    iconClose.classList.toggle('hidden', isHidden);
+    toggle.setAttribute('aria-expanded', String(!isHidden));
+  });
+
+  document.querySelectorAll('.nav-mobile-link').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

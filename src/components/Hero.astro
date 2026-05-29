@@ -1,0 +1,64 @@
+---
+const heroImage =
+  'https://images.unsplash.com/photo-1504328077-f8b1fb9d0677?w=1920&q=80';
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden"
+>
+  <!-- Background image -->
+  <img
+    src={heroImage}
+    alt="סדנת נגרות"
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+  />
+  <div class="absolute inset-0 bg-wood-dark/70"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+    <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-wood-light sm:text-base">
+      עיצוב עץ בהתאמה אישית
+    </p>
+    <h1 class="mb-6 text-4xl font-extrabold leading-tight text-cream sm:text-6xl lg:text-7xl">
+      כל חתיכה מספרת סיפור
+    </h1>
+    <p class="mx-auto mb-10 max-w-2xl text-lg text-cream/80 sm:text-xl">
+      ריהוט עץ מלא מותאם אישית לביתך - מהרעיון ועד לסיום
+    </p>
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        href="#gallery"
+        class="w-full rounded-lg bg-wood-light px-8 py-3 text-base font-bold text-wood-dark transition-colors hover:bg-wood-medium sm:w-auto"
+      >
+        לגלריית העבודות
+      </a>
+      <a
+        href="#contact"
+        class="w-full rounded-lg border-2 border-cream px-8 py-3 text-base font-bold text-cream transition-colors hover:bg-cream hover:text-wood-dark sm:w-auto"
+      >
+        צור קשר עכשיו
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a
+    href="#about"
+    aria-label="גלול למטה"
+    class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-cream/80"
+  >
+    <svg
+      class="h-8 w-8"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </a>
+</section>
